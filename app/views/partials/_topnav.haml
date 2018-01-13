@@ -1,0 +1,54 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  - if params[:action] == 'edit' || params[:action] == 'new'
+    = link_to root_url, class: 'navbar-brand' do
+      %i.icon-arrow-left.icons
+
+  - if params[:action] == 'new'
+    = link_to new_paper_url, class: 'navbar-brand' do
+      %i.icon-doc.icons
+      New Paper
+
+  - elsif params[:action] == 'edit'
+    = link_to [:edit, @paper], class: 'navbar-brand' do
+      %i.icon-doc.icons
+      Edit Paper
+  
+  - else
+    = link_to root_url, class: 'navbar-brand' do
+      %i.icon-notebook.icons
+      NoteBook
+
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.icon-options.icons
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      -# %li.nav-item.active
+      -#   %a.nav-link{:href => "#"}
+      -#     Home
+      -#     %span.sr-only (current)
+      %li.nav-item
+        = link_to new_paper_path, class: 'nav-link' do
+          %i.icon-plus.icons
+          Paper
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          %i.icon-user.icons
+          Account
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          = link_to edit_user_registration_path, class: 'dropdown-item' do
+            %i.icon-settings.icons
+            Edit Account
+          = link_to destroy_user_session_url, method: :delete, class: 'dropdown-item' do
+            %i.icon-logout.icons
+            Log out
+      -# %li.nav-item
+      -#   %a.nav-link.disabled{:href => "#"} Disabled
+    = search_form_for(@q, class: 'form-inline my-2 my-lg-0') do |f|
+      .input-group.mb-3
+        = f.search_field :title_cont, class: 'form-control', "aria-describedby" => "basic-addon2", "aria-label" => "Paper's title", :placeholder => "Search Title", :type => "text"
+        .input-group-append
+          = f.button :submit, class: 'btn btn-outline-light' do
+            %i.icon-magnifier.icons
+          
+
+

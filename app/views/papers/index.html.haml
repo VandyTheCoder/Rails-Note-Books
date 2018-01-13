@@ -1,0 +1,44 @@
+- if @papers.any?
+  - date = 1.day.from_now(@papers.first.created_at.to_date) rescue nil
+  - @papers.each do |paper|
+    - if date > paper.created_at.to_date
+      - date = paper.created_at.to_date
+      .col-sm-12.date_title
+        %h3
+          %i.icon-calendar.icons
+          = date
+        %hr
+    .col-sm-6.col-md-4.paper-box
+      .card
+        -# %input.text-content{type: 'hidden', value: "#{paper.body}"}
+        .card-header
+          .row
+            .col.paper-title
+              %i.icon-doc.icons
+              = paper.title
+            .col.time_ago{align: 'right'}
+              %i.icon-clock.icons
+              = "#{distance_of_time_in_words(Time.now, paper.created_at)} ago"
+
+        .card-body#style-5
+          = paper.body.html_safe
+
+        -# %textarea.edit-card-body#style-5
+
+        .card-footer
+          .row
+            .col.created_at_text
+              %i.icon-calendar.icons
+              = paper.created_at.to_date
+            .col.paper-actions{align: 'right'}
+              %a{class: 'btn btn-dark btn-sm card-content-save'}
+                %i.icon-check.icons
+              = link_to edit_paper_path(paper), class: 'btn btn-dark btn-sm' do
+                %i.icon-note.icons
+              = link_to paper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' do
+                %i.icon-trash.icons
+- else
+  #container_no_pages
+    .alert.alert-dark{role: 'alert'}
+      %h1#no_pages_text
+        There Aren't Any Papers!

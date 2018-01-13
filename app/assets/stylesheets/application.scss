@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "bootstrap";
+@import "simple-line-icons";
+
+@import "common/*";
+
+@import "papers/*";
+@import "devise/sessions/*";
+@import "devise/registrations/*";
+
+body {
+    font-family: 'Roboto', sans-serif;
+}

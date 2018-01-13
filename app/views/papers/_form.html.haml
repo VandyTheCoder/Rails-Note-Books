@@ -1,0 +1,17 @@
+%br
+= form_with(model: paper, local: true) do |form|
+  - if paper.errors.any?
+    .alert.alert-danger{:role => "alert"}
+      #error_explanation
+        %h2
+          = pluralize(paper.errors.count, "error")
+          prohibited this paper from being saved:
+        %ul
+          - paper.errors.full_messages.each do |message|
+            %li= message
+  .input-group.input-group-lg    
+    = form.text_field :title, id: :paper_title, class: 'form-control', placeholder: 'Title', required: '', 'aria-label' => 'Large', 'aria-describedby' => 'inputGroup-sizing-sm'
+  %hr
+  = form.text_area :body, id: :paper_body, :class => "tinymce"
+  %hr
+  = form.submit class: 'btn btn-dark', id: "submit-form-btn"

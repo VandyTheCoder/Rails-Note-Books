@@ -1,0 +1,17 @@
+.login-page
+  %h2
+    %i.icon-notebook.icons
+    NoteBook
+  %hr
+  .form
+    - if flash[:alert].present?
+      .alert.alert-danger{:role => "alert"}
+        = flash[:alert]
+    = form_for(resource, as: resource_name, url: session_path(resource_name), class: 'login-form') do |f|
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email'
+      = f.password_field :password, autocomplete: "off", placeholder: 'Password'
+      = f.submit "Log in"
+      %hr
+      %p.message
+        = render "devise/shared/links"
+

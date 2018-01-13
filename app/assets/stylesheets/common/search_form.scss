@@ -1,0 +1,15 @@
+body{
+    #paper_search{
+        margin-bottom: -1rem !important;
+        #q_title_cont{
+            border-color: white;
+            -webkit-box-shadow: none;
+        }
+
+        & > div > div > button{
+            background-color: white;
+            border-color: white;
+            color: #343a40;
+        }
+    }
+}
