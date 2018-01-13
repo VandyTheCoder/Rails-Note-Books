@@ -19,7 +19,7 @@ class PapersController < ApplicationController
   # POST /papers
   # POST /papers.json
   def create
-    @paper = Paper.new(paper_params)
+    @paper = current_user.papers.new(paper_params)
     if @paper.save
       redirect_to papers_url, notice: 'Paper was successfully created.'
     else
@@ -47,7 +47,7 @@ class PapersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_paper
-      @paper = Paper.find(params[:id])
+      @paper = current_user.papers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -56,7 +56,7 @@ class PapersController < ApplicationController
     end
 
     def init_search
-      @q = Paper.ransack(params[:q])
+      @q = current_user.papers.ransack(params[:q])
       @papers = @q.result(distinct: true).order(created_at: :desc)
     end
 end

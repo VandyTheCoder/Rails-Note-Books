@@ -31,12 +31,13 @@
               %i.icon-calendar.icons
               = paper.created_at.to_date
             .col.paper-actions{align: 'right'}
-              %a{class: 'btn btn-dark btn-sm card-content-save'}
-                %i.icon-check.icons
-              = link_to edit_paper_path(paper), class: 'btn btn-dark btn-sm' do
-                %i.icon-note.icons
-              = link_to paper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' do
-                %i.icon-trash.icons
+              - if paper.user_id == current_user.id
+                %a{class: 'btn btn-dark btn-sm card-content-save'}
+                  %i.icon-check.icons
+                = link_to edit_paper_path(paper), class: 'btn btn-dark btn-sm' do
+                  %i.icon-note.icons
+                = link_to paper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' do
+                  %i.icon-trash.icons
 - else
   #container_no_pages
     .alert.alert-dark{role: 'alert'}
