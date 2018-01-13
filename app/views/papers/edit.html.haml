@@ -1,9 +1,3 @@
--if paper.user_id == current_user.id
-  .col-md-1
-  .col-md-10
-    = render 'form', paper: @paper  
-- else
-  #container_no_pages
-    .alert.alert-dark{role: 'alert'}
-      %h1#no_pages_text
-        You Can't Edit This Paper!
+.col-md-1
+.col-md-10
+  = render 'form', paper: @paper  
