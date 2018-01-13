@@ -29,18 +29,15 @@
       %li.nav-item
         = link_to new_paper_path, class: 'nav-link' do
           %i.icon-plus.icons
-          Paper
-      %li.nav-item.dropdown
-        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          New Paper
+      %li.nav-item
+        = link_to edit_user_registration_path, class: 'nav-link' do
           %i.icon-user.icons
-          Account
-        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          = link_to edit_user_registration_path, class: 'dropdown-item' do
-            %i.icon-settings.icons
-            Edit Account
-          = link_to destroy_user_session_url, method: :delete, class: 'dropdown-item' do
-            %i.icon-logout.icons
-            Log out
+          User Account
+      %li.nav-item
+        = link_to destroy_user_session_url, method: :delete, class: 'nav-link' do
+          %i.icon-logout.icons
+          Log Out
       -# %li.nav-item
       -#   %a.nav-link.disabled{:href => "#"} Disabled
     = search_form_for(@q, class: 'form-inline my-2 my-lg-0') do |f|
