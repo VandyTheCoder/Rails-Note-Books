@@ -30,18 +30,26 @@ class PapersController < ApplicationController
   # PATCH/PUT /papers/1
   # PATCH/PUT /papers/1.json
   def update
-    if @paper.update(paper_params)
-      redirect_to papers_url, notice: 'Paper was successfully updated.'      
+    if current_user.id == @paper.user_id
+      if @paper.update(paper_params)
+        redirect_to papers_url, notice: 'Paper was successfully updated.'      
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to papers_url, notice: 'Please learn doing this in right way,kid!'
     end
   end
 
   # DELETE /papers/1
   # DELETE /papers/1.json
   def destroy
-    @paper.destroy
-    redirect_to papers_url, notice: 'Paper was successfully destroyed.'
+    if current_user.id == @paper.user_id
+      @paper.destroy
+      redirect_to papers_url, notice: 'Paper was successfully destroyed.'
+    else
+      redirect_to papers_url, notice: 'Please learn doing this in right way,kid!'
+    end
   end
 
   private
