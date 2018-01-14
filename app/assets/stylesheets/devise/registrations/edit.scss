@@ -11,6 +11,7 @@ body[id='registrations_edit'],[id='registrations_update']{
     }
 
     .edit-page {
+        text-align: center;
         width: 360px;
         padding: 8% 0 0;
         margin: auto;
@@ -20,6 +21,7 @@ body[id='registrations_edit'],[id='registrations_update']{
             font-family: "Roboto-Light", sans-serif;
 
             & > a{
+                float: left;
                 text-decoration: none;
                 color: white;
             }

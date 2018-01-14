@@ -21,11 +21,7 @@ body[id='papers_index']{
         margin-top: 10px;
     }
     .date_title{
-        margin-top: 3rem;
-        
-        &:first-child{
-            margin-top: 1rem;
-        }
+        margin-top: 1rem;
     }
     .card{
         border: none;
@@ -35,6 +31,7 @@ body[id='papers_index']{
             color: white;
             .time_ago {
                 font-size: 0.8rem;
+                white-space: nowrap;
             }
         }
         .card-body{
@@ -61,6 +58,10 @@ body[id='papers_index']{
             }
             .created_at_text{
                 margin-top: 5px;
+                white-space: nowrap;
+                @media #{$tablet-down}  {
+                    font-size: 0.8rem;
+                }
             }
             .card-content-save{
                 display: none;
