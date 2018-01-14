@@ -12,6 +12,13 @@ body[id='papers_index']{
         justify-content: center;
         font-family: "Roboto-Light", sans-serif;
         color: #343a40;
+
+        & > div > h1{
+            @media #{$phone} {
+                white-space: nowrap;
+                font-size: 2rem;
+            }            
+        }
     }
     #notice{
         margin-top: 15px;
