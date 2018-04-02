@@ -30,7 +30,7 @@ rails server
 
 ***Congratulation!*** Now, you already ran the project on your machine or server.
 
-## Demo Rails Chat Rooms
+## Demo Rails Note Books
 
 I have hosted the demo server on [Heroku](https://www.heroku.com/)
 You can visit it here: [Rails Note Books](https://rails-note-books.herokuapp.com/)
