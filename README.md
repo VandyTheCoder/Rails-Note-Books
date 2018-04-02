@@ -1,4 +1,4 @@
-# Rails Chat Rooms
+# Rails Note Books
 
 This project, I created it because I want to create my own online note book. I didn't trust any other note books service provider with some of my private data.
 
