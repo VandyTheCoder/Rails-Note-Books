@@ -30,20 +30,13 @@ rails server
 
 ***Congratulation!*** Now, you already ran the project on your machine or server.
 
-## Demo Rails Note Books
-
-I have hosted the demo server on [Heroku](https://www.heroku.com/)
-You can visit it here: [Rails Note Books](https://rails-note-books.herokuapp.com/)
-
 ## Versioning
 
-Rails Note Books' Version is ***1.0.0***.
+Rails Note Books version is ***1.0.0***.
 
 ## Authors
 
-* **Vandy Sodanheang** - *Initial work* - [Web and Mobile Developer](https://www.linkedin.com/in/vandy-sodanheang-368410113/)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Vandy Sodanheang** - *Initial work* - [Product Owner & Backend Developer](https://www.linkedin.com/in/vandy-sodanheang/)
 
 ## License
 
