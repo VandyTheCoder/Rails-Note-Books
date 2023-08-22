@@ -3,16 +3,14 @@ Note.Common =
     @_initTinyMCE()
   
   _initTinyMCE: ->
-    if typeof tinyMCE != 'undefined'
-      tinyMCE.init
-        selector: 'textarea.tinymce'
-        toolbar: [
-          'styleselect | fontselect |  fontsizeselect | bold italic underline | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent | link | code | codesample'
-        ]
-        plugins: 'link,code,codesample,autoresize,media,table,insertdatetime,charmap,print,preview,anchor,searchreplace,visualblocks,fullscreen,textcolor colorpicker,hr,lists advlist'
-        fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt"
-        theme: 'modern'
-        color_picker_callback: (callback, value) ->
-          callback '#FFFFFF'
-    else
-      setTimeout arguments.callee, 50
+    tinyMCE.init
+      selector: 'textarea.tinymce'
+      height : '600px'
+      plugins: 'lists table'
+      toolbar: 'undo redo fontselect fontsizeselect styleselect bold italic numlist bullist align'
+      content_style: 'p { margin-top: 0px; margin-bottom: 0px; }'
+      force_br_newlines : true,
+      force_p_newlines : false,
+      gecko_spellcheck : true,
+      forced_root_block : '',
+      remove_linebreaks : true

@@ -2,7 +2,7 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap
-#= require tinymce-jquery
+#= require tinymce
 
 #= require namespace
 #= require common
