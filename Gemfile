@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.6.9'
+ruby '3.0.3'
 
 gem 'rails',                        '6.1.7.4'
 gem 'sqlite3',                                              group: :development
@@ -23,6 +23,7 @@ gem 'devise',                       '~> 4.4'
 gem 'ransack',                      '~> 2.5.0'
 gem 'tinymce-rails',                '~> 6.6', '>= 6.6.2'
 gem 'rails_12factor',                                       group: :production
+gem 'nokogiri',                     '~> 1.15', '>= 1.15.4'
 
 group :development, :test do
   gem 'byebug',                                             platforms: [:mri, :mingw, :x64_mingw]
