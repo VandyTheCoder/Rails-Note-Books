@@ -7,7 +7,7 @@ end
 
 ruby '2.6.9'
 
-gem 'rails',                        '6.1.7.1'
+gem 'rails',                        '6.1.7.4'
 gem 'sqlite3',                                              group: :development
 gem 'pg',                           '~> 1.5', '>= 1.5.3',                 group: :production
 gem 'puma',                         '~> 6.3', '>= 6.3.1'
